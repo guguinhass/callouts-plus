@@ -279,9 +279,9 @@ module.exports = class CalloutsPlusPlugin extends Plugin {
   }
 };
 
-/* ---------------------------------------------------------------- */
-/* Picker (modal)                                                   */
-/* ---------------------------------------------------------------- */
+/* -------------------------------------------------------------- */
+/* Picker (modal)                                                 */
+/* -------------------------------------------------------------- */
 
 class CalloutModal extends Modal {
   constructor(app, plugin, editor, mode, header) {
