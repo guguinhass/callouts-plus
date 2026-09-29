@@ -1,0 +1,9 @@
+{
+  "id": "callouts-plus",
+  "name": "Callouts Plus",
+  "version": "1.0.0",
+  "minAppVersion": "1.4.0",
+  "description": "Pick callout colors and types from a visual menu, with 20 extra colors and custom callouts.",
+  "author": "guguinhas",
+  "isDesktopOnly": false
+}

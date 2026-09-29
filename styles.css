@@ -1,0 +1,81 @@
+/* Picker (modal) */
+.cp-modal .cp-search {
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.cp-modal .cp-options {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.cp-modal .cp-options input {
+  flex: 1;
+  min-width: 0;
+}
+
+.cp-modal .cp-groups {
+  max-height: 55vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.cp-modal .cp-group-title {
+  margin: 14px 0 6px;
+  font-size: var(--font-ui-small);
+  font-weight: var(--font-semibold);
+  color: var(--text-muted);
+}
+
+.cp-modal .cp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  gap: 6px;
+}
+
+.cp-modal .cp-empty {
+  margin-top: 16px;
+  color: var(--text-muted);
+}
+
+/* Cards (shared between the picker and the suggestions) */
+.cp-modal .cp-callout,
+.cp-suggest .cp-callout {
+  margin: 0;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.cp-modal .cp-callout .callout-title,
+.cp-suggest .cp-callout .callout-title {
+  align-items: center;
+}
+
+.cp-modal .cp-callout:hover {
+  outline: 2px solid color-mix(in srgb, var(--callout-color) 70%, transparent);
+}
+
+.cp-callout .cp-id {
+  margin-left: auto;
+  padding-left: 8px;
+  font-family: var(--font-monospace);
+  font-size: var(--font-ui-smaller);
+  opacity: 0.6;
+  white-space: nowrap;
+}
+
+/* Settings */
+.cp-custom-row .setting-item-info {
+  display: none;
+}
+
+.cp-custom-row .setting-item-control {
+  flex: 1;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.cp-custom-row input[type='text'] {
+  width: 130px;
+}
