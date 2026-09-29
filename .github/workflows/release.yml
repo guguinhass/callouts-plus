@@ -1,0 +1,53 @@
+name: Release Obsidian plugin
+
+# Runs whenever you push a tag (e.g. "git tag 1.0.1 && git push origin 1.0.1").
+# It builds nothing (this plugin ships main.js as-is), verifies the tag
+# matches manifest.json, attaches build provenance attestations, and
+# creates the GitHub release with the three required files.
+on:
+  push:
+    tags:
+      - "*"
+
+permissions:
+  contents: write      # to create the release
+  id-token: write      # required by attest-build-provenance
+  attestations: write  # required by attest-build-provenance
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Read tag and manifest version
+        id: version
+        run: |
+          TAG="${GITHUB_REF#refs/tags/}"
+          MANIFEST_VERSION="$(jq -r .version manifest.json)"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "manifest_version=$MANIFEST_VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Fail if tag does not match manifest.json version
+        if: steps.version.outputs.tag != steps.version.outputs.manifest_version
+        run: |
+          echo "Tag '${{ steps.version.outputs.tag }}' does not match manifest.json version '${{ steps.version.outputs.manifest_version }}'."
+          exit 1
+
+      - name: Attest build provenance
+        uses: actions/attest-build-provenance@v1
+        with:
+          subject-path: |
+            main.js
+            manifest.json
+            styles.css
+
+      - name: Create GitHub release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create "${{ steps.version.outputs.tag }}" \
+            --title "${{ steps.version.outputs.tag }}" \
+            --generate-notes \
+            main.js manifest.json styles.css
