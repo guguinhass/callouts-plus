@@ -4,7 +4,7 @@ Pick callout colors and types from a visual menu instead of typing the identifie
 
 Obsidian's default `[!type]` syntax requires remembering the exact keyword for each callout. Callouts Plus adds a visual picker with a live preview of every callout, plus 20 extra colors and support for fully custom callouts.
 
-![Insert callout picker](https://raw.githubusercontent.com/YOUR-GITHUB-USERNAME/callouts-plus/main/screenshot.png)
+![Insert callout picker](https://raw.githubusercontent.com/guguinhass/callouts-plus/main/images/screenshot.png)
 
 ## Features
 
