@@ -22,7 +22,14 @@ Obsidian's default `[!type]` syntax requires remembering the exact keyword for e
 
 ## Installation
 
-Not yet available in the Community Plugins directory. Until then, install with [BRAT](https://github.com/TfTHacker/obsidian42-brat) using this repository, or download `main.js`, `manifest.json`, and `styles.css` from the [latest release](../../releases/latest) into `<vault>/.obsidian/plugins/callouts-plus/`.
+Callouts Plus is available in the Obsidian Community Plugins directory:
+
+Open Settings → Community plugins → Browse.
+Search for Callouts Plus and install it.
+Enable it — the commands and the right-click menu item appear immediately.
+
+Manual install
+Download main.js, manifest.json, styles.css from the latest release into <vault>/.obsidian/plugins/callouts-plus/, then enable it in Settings → Community plugins.
 
 ## Disclosures
 
